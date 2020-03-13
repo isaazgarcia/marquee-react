@@ -1,0 +1,32 @@
+{
+  "name": "marquee-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaazgarcia/marquee-react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isaazgarcia/marquee-react/issues"
+  },
+  "homepage": "https://github.com/isaazgarcia/marquee-react#readme",
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "foundation-sites": "^6.6.1",
+    "next": "^9.3.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-foundation": "^0.9.6",
+    "sass": "^1.26.3"
+  }
+}
