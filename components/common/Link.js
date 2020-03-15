@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-export default ({ href, children }) => {
+export default ({ href, children, ...props }) => {
     const router = useRouter();
 
     let className = children.props.className || '';
@@ -10,5 +10,5 @@ export default ({ href, children }) => {
         className = `${className} selected`
     }
 
-    return <Link href={href}>{React.cloneElement(children, { className })}</Link>
+    return <Link href={href} {...props}>{React.cloneElement(children, { className })}</Link>
 }

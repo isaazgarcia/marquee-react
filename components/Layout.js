@@ -4,8 +4,12 @@ import bg from '../assets/img/slide-one.png';
 import logo from '../assets/logo.svg';
 import {NextSeo} from 'next-seo';
 import Link from "./common/Link";
+// import data from "../data/download";
 
 export default function Layout({pageTitle, children}) {
+    const pages = [{slug:'/industries',title:'Industries'},{slug:'/services',title:'Services'},{slug:'/about-us',title:'About Us'}];
+    // Option 2
+    // const pages = data.pages.map(page => {return {title:page.title,slug:page.slug}});
     return (
         <BodyImage img={bg}>
             <NextSeo title={pageTitle} description={pageTitle}/>
@@ -16,9 +20,7 @@ export default function Layout({pageTitle, children}) {
                         <LightButton>Contact Us</LightButton>
                     </div>
                     <MenuWrapper>
-                        <Link href={"/industries"}><a>Industries</a></Link>
-                        <Link href={"/services"}><a>Services</a></Link>
-                        <Link href={"/about-us"}><a>About Us</a></Link>
+                        {pages.map(page=> <Link href={page.slug}><a title={page.title}>{page.title}</a></Link>)}
                     </MenuWrapper>
                 </Header>
                 {children}
@@ -66,10 +68,10 @@ const MenuWrapper = styled.div`
     font-size: 14px;
     transition: 0.3s;
     &.selected{
-      color: #ffc004;
+      color: var(--yellowColor);
     }
     &:hover{
-      color: #ffc004
+      color: var(--yellowColor);
     }
   }
 `;
@@ -85,6 +87,6 @@ const LightButton = styled.button`
   transition: 0.4s;
   cursor:pointer;
   &:hover{
-    background-color: #ffc004;
+    background-color: var(--yellowColor);
   }
 `;

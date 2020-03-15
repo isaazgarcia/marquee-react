@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import {fluidRange} from "polished";
 import {Rorphans} from "../utils";
 import {ApiUrl} from "../config";
-import {fadeDown, fadeUp} from "./common/styles";
+import {fadeDown, fadeUp} from "./common/AnimationStyles";
 
 export const Marquee = ({headline="",subhead="",cta="",background}) => {
     return (
@@ -13,8 +13,8 @@ export const Marquee = ({headline="",subhead="",cta="",background}) => {
                 <Subhead><Rorphans>{subhead}</Rorphans></Subhead>
             </MarqueeContent>
             <Footer>
-                <CallToAction>{cta}</CallToAction>
-                <Contact>LET’S TAlk. <span>→</span> </Contact>
+                <CallToAction><Rorphans>{cta}</Rorphans></CallToAction>
+                <Contact>LET’S TALK. <span>→</span> </Contact>
             </Footer>
         </>
     )
@@ -29,6 +29,7 @@ const MarqueeContent = styled.div`
   color: white;
   align-items: center;
   padding-top: auto;
+  animation: ${fadeUp} 600ms ;
   @media only screen and (max-width: 600px) {
     grid-template-columns:  auto ;    
   }
@@ -43,8 +44,8 @@ const Headline = styled.h1`
   line-height: 1;
   animation: ${fadeUp} 750ms ;
   @media only screen and (max-width: 600px) {
-        align-self: end; 
-        margin: 0;
+    align-self: end; 
+    margin: 0;
   }
   
 `;
@@ -84,6 +85,7 @@ const CallToAction = styled.p`
     font-weight: bold;
     @media only screen and (max-width: 600px) {
      align-self: end;
+     padding-right: 5vw;
     }
 `;
 
@@ -96,11 +98,11 @@ const Contact = styled.a`
     cursor:pointer;
     margin-left: 13vw;
     &:hover{
-      color: #ffc004;
+      color: var(--yellowColor);
     }
     & > span {
       font-size: 20px;
-      color: #ffc001;
+      color: var(--yellowColor);
     }
     @media only screen and (max-width: 600px) {
      align-self: start;

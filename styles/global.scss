@@ -1,5 +1,7 @@
-$yellow: #ffc004;
 
+:root {
+  --yellowColor: #ffc004;
+}
 body {
   font-family: "Roboto Thin", sans-serif, monospace;
   background-color: ghostwhite;
@@ -8,20 +10,21 @@ body {
 a{
   text-decoration: none;
 }
-.page-transition-enter {
-  opacity: 0.1;
-}
-.page-transition-enter-active {
-  opacity: 1;
-  transition: opacity .5s;
-}
-.page-transition-exit {
-  opacity: 1;
-}
-.page-transition-exit-active {
-  opacity: 0.1;
-  transition: opacity .5s;
-}
+// I did'nt use it because, I didn't like how it looked.
+//.page-transition-enter {
+//  opacity: 0.1;
+//}
+//.page-transition-enter-active {
+//  opacity: 1;
+//  transition: opacity .5s;
+//}
+//.page-transition-exit {
+//  opacity: 1;
+//}
+//.page-transition-exit-active {
+//  opacity: 0.1;
+//  transition: opacity .5s;
+//}
 
 
 
