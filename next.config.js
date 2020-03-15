@@ -10,7 +10,7 @@ const config = {
                 rules: [
                     ...module.rules,
                     {
-                        test: /\.(png|gif|jpg|jpeg)$/,
+                        test: /\.(png|gif|jpg|jpeg|svg)$/,
                         use: [
                             {
                                 loader: 'file-loader',
@@ -26,7 +26,9 @@ const config = {
                 ]
             }
         };
-    }
+    },
+
+
 };
 
 module.exports = config;

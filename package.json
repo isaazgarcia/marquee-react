@@ -22,11 +22,15 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "foundation-sites": "^6.6.1",
+    "emotion": "10.0.27",
+    "emotion-server": "10.0.27",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^9.3.0",
+    "next-seo": "^4.4.0",
+    "polished": "^3.4.4",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-foundation": "^0.9.6",
-    "sass": "^1.26.3"
+    "sass": "^1.26.3",
+    "next-page-transitions": "^1.0.0-beta.2"
   }
 }

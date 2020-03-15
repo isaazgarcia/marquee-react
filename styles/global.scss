@@ -1,10 +1,28 @@
-@import '~foundation-sites/assets/foundation';
-
 $yellow: #ffc004;
 
 body {
-  background-color: grey;
+  font-family: "Roboto Thin", sans-serif, monospace;
+  background-color: ghostwhite;
+  margin: 0;
 }
+a{
+  text-decoration: none;
+}
+.page-transition-enter {
+  opacity: 0.1;
+}
+.page-transition-enter-active {
+  opacity: 1;
+  transition: opacity .5s;
+}
+.page-transition-exit {
+  opacity: 1;
+}
+.page-transition-exit-active {
+  opacity: 0.1;
+  transition: opacity .5s;
+}
+
 
 
 
