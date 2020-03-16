@@ -1,7 +1,7 @@
 import React from "react";
-import Layout from "../../components/Layout";
 import {Marquee} from "../../components/Marquee";
 import {fetcher} from "../../utils";
+import {NextSeo} from "next-seo";
 
 // This is just an example that we can dynamic route from the .json. The performance with this one is not as good as creating a page if we already know the page name/slug.
 // eg. /dynamic/industries
@@ -9,9 +9,8 @@ import {fetcher} from "../../utils";
 export default function Page({page}) {
     return (
         <>
-            <Layout pageTitle={page.title}>
-                <Marquee {...page.blocks[0]} />
-            </Layout>
+            <NextSeo title={page.title}/>
+            <Marquee {...page.blocks[0]} />
         </>
     );
 }

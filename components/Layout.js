@@ -1,9 +1,8 @@
 import styled from "@emotion/styled";
 import React from "react";
-import bg from '../assets/img/slide-one.png';
 import logo from '../assets/logo.svg';
-import {NextSeo} from 'next-seo';
 import Link from "./common/Link";
+import {fadeDown, fadeUp} from "./common/AnimationStyles";
 // import data from "../data/download";
 
 export default function Layout({pageTitle, children}) {
@@ -11,8 +10,7 @@ export default function Layout({pageTitle, children}) {
     // Option 2
     // const pages = data.pages.map(page => {return {title:page.title,slug:page.slug}});
     return (
-        <BodyImage img={bg}>
-            <NextSeo title={pageTitle} description={pageTitle}/>
+        <>
             <Container>
                 <Header>
                     <div>
@@ -20,24 +18,22 @@ export default function Layout({pageTitle, children}) {
                         <LightButton>Contact Us</LightButton>
                     </div>
                     <MenuWrapper>
-                        {pages.map(page=> <Link href={page.slug}><a title={page.title}>{page.title}</a></Link>)}
+                        {pages.map(page=> <Link key={page.slug} href={page.slug}><MenuItem title={page.title}>{page.title}</MenuItem></Link>)}
                     </MenuWrapper>
                 </Header>
                 {children}
             </Container>
-        </BodyImage>
+        </>
     );
 }
 
 const Img = styled.img`
   cursor:pointer;
-`;
-
-const BodyImage = styled.div`
-  background-image: url(${props => props.img});
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  animation: ${fadeDown({percentageIn:`-30%`})} 750ms ;
+  transition: 0.3s;
+  &:hover{
+      transform: translate(1px,1px);
+  }
 `;
 
 const Container = styled.div`
@@ -55,25 +51,29 @@ const Header = styled.header`
   margin-top: 3vh;
 `;
 
-const MenuWrapper = styled.div`
-  display: grid;
-  grid-auto-columns: max-content;
-  grid-row-gap: 0.3rem;
-  margin-top: 1rem;
-  
-  a {
+const MenuItem = styled.a`
     color:white;
+    cursor:pointer;
     font-weight: bold;
     line-height: 1.85;
     font-size: 14px;
     transition: 0.3s;
+    text-decoration: none;
     &.selected{
       color: var(--yellowColor);
     }
     &:hover{
       color: var(--yellowColor);
+      transform: translate(1px, 1px);
     }
-  }
+`;
+
+const MenuWrapper = styled.div`
+  display: grid;
+  grid-auto-columns: max-content;
+  grid-row-gap: 0.3rem;
+  margin-top: 1rem;
+  animation: ${fadeUp} 750ms ;
 `;
 
 const LightButton = styled.button`

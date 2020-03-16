@@ -1,14 +1,14 @@
 import React from "react";
-import Layout from "../components/Layout";
 import {Marquee} from "../components/Marquee";
 import {fetcher} from "../utils";
+import {NextSeo} from "next-seo";
 // import data from "../data/download";
+
 export default function Industries({page}) {
     return (
         <>
-            <Layout pageTitle={page.title}>
-                <Marquee {...page.blocks[0]} />
-            </Layout>
+            <NextSeo title={page.title}/>
+            <Marquee {...page.blocks[0]} />
         </>
     );
 }

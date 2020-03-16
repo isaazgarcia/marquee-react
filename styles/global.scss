@@ -1,31 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
+$htmlBackground: "/slide-one.png";
+$yellowColor: #ffc004;
 :root {
-  --yellowColor: #ffc004;
+  --yellowColor: #{$yellowColor};
 }
+
 body {
-  font-family: "Roboto Thin", sans-serif, monospace;
-  background-color: ghostwhite;
+  font-family: Helvetica,"Open Sans" , sans-serif;
+  padding: 0;
   margin: 0;
+  background-image: url($htmlBackground);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-a{
-  text-decoration: none;
-}
-// I did'nt use it because, I didn't like how it looked.
-//.page-transition-enter {
-//  opacity: 0.1;
-//}
-//.page-transition-enter-active {
-//  opacity: 1;
-//  transition: opacity .5s;
-//}
-//.page-transition-exit {
-//  opacity: 1;
-//}
-//.page-transition-exit-active {
-//  opacity: 0.1;
-//  transition: opacity .5s;
-//}
-
-
-
-
