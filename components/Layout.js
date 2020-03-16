@@ -74,6 +74,10 @@ const MenuWrapper = styled.div`
   grid-row-gap: 0.3rem;
   margin-top: 1rem;
   animation: ${fadeUp} 750ms ;
+  @media only screen and (max-width: 375px) {
+    grid-template-columns:  auto auto auto  ;
+    margin-bottom: 1rem;    
+  }
 `;
 
 const LightButton = styled.button`
