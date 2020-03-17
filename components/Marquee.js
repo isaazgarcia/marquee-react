@@ -6,7 +6,7 @@ import {ApiUrl} from "../config";
 import {fadeDown, fadeUp} from "./common/AnimationStyles";
 import { motion } from 'framer-motion'
 
-export const Marquee = ({headline = "", subhead = "", cta = "", background=""}) => {
+export const Marquee = ({headline = "", subhead = "", cta = "", background="slide-one.png"}) => {
     return (
         <MarqueeContainer>
             {background && <Img src={ApiUrl + '/' + background} alt={'marquee image'} variants={ImageVariants} transition={transition} exit="exit" initial="initial" animate="enter"/>}
