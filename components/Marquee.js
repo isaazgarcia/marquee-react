@@ -137,6 +137,7 @@ const Contact = styled.a`
       color: var(--yellowColor);
     }
     @media only screen and (max-width: 600px) {
+    margin-left: 5vw;
      align-self: start;
     }
 `;
