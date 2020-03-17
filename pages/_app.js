@@ -18,11 +18,9 @@ function MyApp({Component, pageProps, router}) {
                 }}
             />
             <Layout pageTitle={"Home"}>
-                <Container>
-                    <AnimatePresence exitBeforeEnter>
-                        <Component {...pageProps} key={router.route}/>
-                    </AnimatePresence>
-                </Container>
+                <AnimatePresence exitBeforeEnter>
+                    <Component {...pageProps} key={router.route}/>
+                </AnimatePresence>
             </Layout>
 
         </>

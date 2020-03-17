@@ -7,11 +7,10 @@ import {fadeDown, fadeUp} from "./common/AnimationStyles";
 import { motion } from 'framer-motion'
 
 export const Marquee = ({headline = "", subhead = "", cta = "", background=""}) => {
-
     return (
-        <>
+        <MarqueeContainer>
+            {background && <Img src={ApiUrl + '/' + background} alt={'marquee image'} variants={ImageVariants} transition={transition} exit="exit" initial="initial" animate="enter"/>}
             <MarqueeContent variants={marqueeVariants} exit="exit" initial="initial" animate="enter" whileHover={background && "hover"}>
-                {background && <Img src={ApiUrl + '/' + background} alt={'marquee image'} variants={imageAnimation} transition={transition}/>}
                 <Headline><Rorphans>{headline}</Rorphans></Headline>
                 <Subhead><Rorphans>{subhead}</Rorphans></Subhead>
             </MarqueeContent>
@@ -19,23 +18,27 @@ export const Marquee = ({headline = "", subhead = "", cta = "", background=""}) 
                 <CallToAction><Rorphans>{cta}</Rorphans></CallToAction>
                 <Contact>LET’S TALK. <span>→</span> </Contact>
             </Footer>
-        </>
+        </MarqueeContainer>
     )
 };
 
 const Img = styled(motion.img)`
+   left: 0;
+   top: 0;
    width: 100%;
    height: 100%;
    object-fit: cover;
    z-index: -1;
    pointer-events: none;
-   position: absolute;
+   position: fixed;
+`;
+
+const MarqueeContainer = styled.div`
+    display: grid;
+    grid-template-rows: 1fr auto;
 `;
 
 const MarqueeContent = styled(motion.div)`
-  position: relative;
-  overflow: hidden;
-  z-index: 2;
   display: grid;
   grid-template-columns: 50% auto;
   color: white;
@@ -92,7 +95,7 @@ const Footer = styled.footer`
   display: grid;
   grid-template-columns: 50% auto;
   align-items: center;
-  margin-top: auto;
+  
   @media only screen and (max-width: 600px) {
     grid-template-columns: auto ;
     grid-gap: 0;
@@ -145,6 +148,12 @@ const marqueeVariants = {
     enter: { scale: 1, opacity: 1,x: '0%', transition },
     exit: {scale: 0.5, x: '-30%', opacity: 0, transition: { duration: 1.5, ...transition },},
     hover: { scale: 0.99 }
+};
+
+const ImageVariants = {
+    initial: { scale: 0.5, opacity: 0, x: '30%', },
+    enter: { scale: 1, opacity: 1,x: '0%', transition },
+    exit: {scale: 0.5, x: '-30%', opacity: 0, transition: { duration: 1.5, ...transition },},
 };
 
 const imageAnimation = {hover: { scale: 1.01 },};

@@ -10,8 +10,10 @@ body {
   font-family: Helvetica,"Open Sans" , sans-serif;
   padding: 0;
   margin: 0;
-  background-image: url($htmlBackground);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+
+  background: black;
+  //background-image: url($htmlBackground);
+  //background-position: center;
+  //background-size: cover;
+  //background-repeat: no-repeat;
 }
