@@ -133,7 +133,7 @@ const Contact = styled.a`
       transform: translate(5px);
     }
     & > span {
-      font-size: 20px;
+      font-size: 17px;
       color: var(--yellowColor);
     }
     @media only screen and (max-width: 600px) {

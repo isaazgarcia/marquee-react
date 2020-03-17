@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
-$htmlBackground: "/slide-one.png";
 $yellowColor: #ffc004;
 :root {
   --yellowColor: #{$yellowColor};
@@ -10,10 +9,5 @@ body {
   font-family: Helvetica,"Open Sans" , sans-serif;
   padding: 0;
   margin: 0;
-
   background: black;
-  //background-image: url($htmlBackground);
-  //background-position: center;
-  //background-size: cover;
-  //background-repeat: no-repeat;
 }
